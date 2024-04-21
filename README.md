@@ -17,7 +17,7 @@
 3. set up redis 
 4. Run application
 # API 
-Read operation
-Update operation
-Delete operation
+1. Read operation
+2. Update operation
+3. Delete operation
 
