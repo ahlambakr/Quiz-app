@@ -24,25 +24,25 @@ public class QuizService {
        qestionRepo = theQestionRepo;
     }
 
-    @Cacheable(cacheNames = "questions" )
+    @Cacheable(cacheNames = "questions", key = "#root.method.name" )
    public List<Question> getAllQuestions() {
        return  qestionRepo.findAll();
     }
 
-    @Cacheable(cacheNames = "questions" )
+    @Cacheable(cacheNames = "questions" , key ="#root.method.name")
     public List<Question> getQuestionByCategory(String category) {
   return qestionRepo.getQuestionByCategory(category);
 
     }
 
 @Transactional
-@CachePut(cacheNames = "questions")
+@CachePut(cacheNames = "questions", key = "#root.method.name")
     public void addQuestion(Question question) {
         qestionRepo.save(question);
     }
 
     @Transactional
-    @CacheEvict(cacheNames ="question" , allEntries = true )
+    @CacheEvict(cacheNames ="questions" , allEntries = true )
     public void deleteQuestion (int id) {
         qestionRepo.deleteById(id);
     }
