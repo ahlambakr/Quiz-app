@@ -30,9 +30,5 @@ The application uses PostgreSQL as the primary database to store the questions. 
 2. Set up database
 3. set up redis 
 4. Run application
-# API 
-1. Create operation
-2. Read  operation
-3. Update operation
-4. Delete operation
+
 
